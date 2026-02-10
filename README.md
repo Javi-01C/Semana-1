@@ -1,4 +1,4 @@
-# 📊 Entregable 1: Análisis de Complejidad Algorítmica
+# Entregable 1: Análisis de Complejidad Algorítmica
 
 ## Tabla Comparativa de Complejidades
 
@@ -13,7 +13,7 @@
 
 ---
 
-## 🧠 Reflexión
+## Reflexión
 **¿Cuál fue la analogía que más te ayudó a entender y por qué?**
 
 La analogía de **la fiesta de los desconocidos (O(n²))** fue la más clara. Explica por qué el sistema de DataStream Inc. colapsó: al duplicar los datos, el trabajo no se duplicó, sino que se elevó al cuadrado, haciendo que el hardware fuera irrelevante ante la ineficiencia del código.
