@@ -2,26 +2,26 @@ Fase 2: Diagnóstico del Caso DataStream Inc.
 
  1. Diagnóstico del Problema
 El sistema de detección de fraudes presenta un fallo crítico de "escalabilidad" originado por una ineficiencia algorítmica.
-El análisis indica que el código actual opera bajo una complejidad **cuadrática $O(n^2)$**. 
+El análisis indica que el código actual opera bajo una complejidad cuadrática O(n^2). 
 Esto significa que el sistema realiza comparaciones "todo contra todo", provocando que el tiempo de procesamiento se dispare de forma desproporcionada respecto al volumen de datos. 
-La mejora de hardware es ineficiente porque el problema no es la falta de recursos, sino el diseño lógico que genera miles de millones de operaciones innecesarias que ningún procesador comercial puede mitigar a gran escala.
+La mejora de hardware es ineficiente porque el problema no es la falta de recursos, sino el diseño lógico que genera miles de millones de operaciones innecesarias que ningún procesador comercial puede eliminar a gran escala.
 
  2. Análisis Matemático de Complejidad
 
-Para validar el diagnóstico, comparamos el crecimiento de los datos ($n$) contra el crecimiento del tiempo ($T$):
+Para validar el diagnóstico, comparamos el crecimiento de los datos (n) contra el crecimiento del tiempo (T):
 
-* Crecimiento de Datos ($n$): De 10,000 a 500,000 transacciones = 50x más datos.
-* Crecimiento de Tiempo ($T$): De 1 segundo (aprox.) a 2,820 segundos (47 min) = 2,820x más tiempo.
-* Prueba de Hipótesis $O(n^2)$: Si el algoritmo es cuadrático, el tiempo debería crecer $n^2$.
-    * $50^2 = 2,500$.
-    * **Resultado:** El incremento real ($2,820x$) es muy cercano al teórico ($2,500x$), confirmando la ineficiencia cuadrática.
+* Crecimiento de Datos (n): De 10,000 a 500,000 transacciones = 50 veces más datos.
+* Crecimiento de Tiempo (T): De 1 segundo aproximadamente a 2,820 segundos (47 min) = 2,820 veces más tiempo.
+* Prueba de Hipótesis O(n^2): Si el algoritmo es cuadrático, el tiempo debería crecer n^2.
+    * 50^2 = 2,500.
+    * Resultado: El incremento real (2,820x) es muy cercano al teórico (2,500x), confirmando la ineficiencia cuadrática.
 
-* Impacto del Hardware: Triplicar el servidor solo reduce la constante de tiempo, pero no cambia la curva. Matemáticamente, procesar $500,000^2$ operaciones sigue siendo una carga masiva aunque el procesador sea 3 veces más rápido.
+* Impacto del Hardware: Triplicar el servidor solo reduce la constante de tiempo, pero no cambia la curva. Matemáticamente, procesar 500,000^2 operaciones sigue siendo una carga masiva aunque el procesador sea 3 veces más rápido.
 
 3. Recomendación Concreta
-Objetivo:** Migrar a una complejidad $O(n \log n)$ o idealmente $O(n)$.
+ Migrar a una complejidad O(n \log n) o idealmente O(n).
 
--¿Por qué?**
-Con un algoritmo lineal ($O(n)$), procesar las 500,000 transacciones actuales tomaría apenas **50 segundos** con el hardware original. 
+-¿Por qué?
+Con un algoritmo lineal (O(n)), procesar las 500,000 transacciones actuales tomaría apenas 50 segundos con el hardware original. 
 Esto permitiría a DataStream Inc. no solo igualar a la competencia, sino superarla, procesando millones de datos en pocos minutos sin necesidad de invertir más en servidores costosos.
-Se recomienda el uso de **Tablas Hash** para búsquedas instantáneas o algoritmos de ordenamiento eficiente.
+
