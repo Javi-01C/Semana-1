@@ -1,1 +1,16 @@
 
+ 1. Fragmento 1:
+        Hipotesis: O(1).
+            -Razonamiento: Se aplican operaciones secuenciales (Regla 1).
+             No existen ciclos ni recursión. El tiempo de ejecución es constante e independiente del tamaño de la entrada.
+                 -Conclusión: O(1) Constante.
+
+ 2. Fragmento 2: 
+          -Hipotesis: O(n)
+              -Razonamiento: Existe un loop simple que recorre la lista de principio a fin, se realizan "n" comparaciones.
+                    -Conclusión: O(n) Lineal.
+
+ 3.Fragmento 3:
+          -Hipotesis: O(n^2).
+              -Razonamiento: Aplicamos la Regla 2 de Operaciones Anidadas. Un ciclo de "n" iteraciones contiene otro ciclo de "n" iteraciones. n x n = n^2
+                    -Conclusion:  O(n^2) Cuadrática.
