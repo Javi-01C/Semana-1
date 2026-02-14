@@ -1,1 +1,41 @@
                                                     1) MAPA CONCEPTUAL.
+
+
+                                       **2) Tres Situaciones Futuras de Aplicación**
+
+   -1) Situación: Cuando tenga que diseñar una API que lea millones de registros.
+            Aplicación: En lugar de traer todos los datos y filtrarlos en código dependiendo de la lógica, 
+              aplicaré la teoría para decidir cuándo crear índices en la base de datos, 
+                delegando la complejidad al motor de SQL para obtener búsquedas logarítmicas
+
+   -2) Situación: Un usuario nuevo intenta registrarse con su correo electrónico.
+       El sistema debe verificar si ese correo ya está en uso entre 1 millón de usuarios registrados.
+                Aplicación:El error: Si guardo los correos en una Lista, el sistema tiene que revisar uno por uno hasta encontrarlo o llegar al final.
+                  Esto haría que el registro sea lento.La solución profesional: Usaré un Diccionario .
+                    Esto permite preguntar "¿Existe este correo?" y obtener una respuesta inmediata en un solo paso, sin importar si hay 100 o 10 millones de usuarios.
+
+
+
+   -3) Situacion: Postular a empresas de alto nivel como Google o Amazon.
+              Aplicación: No solo resolver el problema, sino discutir los intercambios entre tiempo y memoria. 
+                Explicar por qué elijo un arreglo y mi pensamiento logico.
+
+
+
+                                   **3) Lista de 2-3 herramientas de profiling/benchmarking que investigarás.**
+
+  a) Chrome DevTools:
+       Objetivo: Aprender a identificar "Cuellos de botella" en JavaScript. 
+                 Ver visualmente cuánto tarda un script en ejecutarse y cómo bloquea la interfaz.
+
+  b) Pyinstrument:
+
+       Objetivo: Instalarlo en mis scripts locales para ver qué función consume más tiempo. 
+                 Pasar de "creo que esto es lento" a "sé que la línea 45 consume el 80% del tiempo".
+
+  c) k6:
+
+       Objetivo: Aprender a simular 100 o 1000 usuarios simultáneos atacando una función mía para ver cómo se degrada el rendimiento (observar la curva de complejidad en acción).
+
+
+
