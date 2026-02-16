@@ -1,0 +1,41 @@
+** Resumen :** 
+Antes de esto, yo pensaba que el Big O (Peor Caso) era la ley absoluta. Si algo era $O(n)$, asumía que siempre era lento.
+El Análisis Amortizado me enseñó que eso es una visión demasiado pesimista.
+¿Qué es realmente?El análisis amortizado es una forma de calcular la complejidad "promedio garantizada" de una secuencia de operaciones. 
+No se trata de probabilidad (como "a veces tengo suerte"), sino de contabilidad.La Analogía que me sirvió:Es como pagar la renta.
+Pagar $500 dólares de golpe el día 1 del mes duele mucho (es una operación costosa, un "pico").
+Pero si lo divides entre los 30 días que vives ahí, el costo diario "amortizado" es de unos $16 dólares.
+En estructuras de datos pasa igual:Hacemos muchas operaciones baratas (costo 1).Cada una "ahorra" un poquito de crédito en una alcancía imaginaria.
+Cuando llega la operación cara inevitable (como redimensionar un arreglo), rompemos la alcancía y pagamos el costo con lo ahorrado.
+Así, aunque haya un momento lento, el costo distribuido sigue siendo bajo.
+
+     
+                                ** DIAGRAMA **
+
+* **Eje X:** Número de inserción.
+* **Eje Y:** Costo de la operación.
+
+  COSTO (Operaciones)
+    ^
+ 16 |                                               █ (Resize: Copia 16 items)
+    |
+  8 |                       █ (Resize: Copia 8)     |
+    |                       |                       |
+  4 |           █ (Resize)  |                       |
+    |           |           |                       |
+  2 |     █     |           |                       |
+  1 | █ █ | █ █ | █ █ █ █ █ | █ █ █ █ █ █ █ █ █ █ █ | ... Costo Constante
+    L_______________________________________________________>
+      1 2 3 4 5 6 7 8 9 ...                     16 ...   Nº DE INSERCIÓN
+
+
+
+                        ** REFLEXION**
+
+¿Cómo cambia mi percepción? Me he dado cuenta de que evaluar una estructura de datos solo por su "peor caso" aislado puede llevarme a descartar opciones excelentes.
+Antes veía un Arregloy pensaba "Uy, el resize es $O(n)$, mejor uso otra cosa si quiero velocidad".
+Ahora entiendo que para aplicaciones generales (web, apps móviles), el ArrayList es increíblemente eficiente porque esos momentos lentos son muy raros.
+Respuesta al Reto del "49% vs 50%":Si implemento una lógica donde el arreglo duplica tamaño al 50% y reduce a la mitad al 49%, crearía un desastre llamado "Thrashing" (falla de oscilación).
+Si tengo el arreglo lleno al 50% y hago esto:Inserto 1: Pasa a 51% .Borro 1: (Baja a 49% del nuevo tamaño).Inserto 1: (Otra vez duplica).
+Perdería el beneficio de la amortización. Estaría pagando el costo caro en cada operación porque no dejo espacio (tiempo) para "ahorrar créditos" entre una y otra. 
+¡La complejidad pasaría de ser O(1) amortizado a O(n) todo el tiempo!
