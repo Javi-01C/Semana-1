@@ -16,15 +16,15 @@ Para verificar mis hipótesis teóricas, calculé la razón de crecimiento divid
 
 ## 2. Conclusiones por Algoritmo
 
-### ✅ Algoritmo A: Confirmado $O(n)$
+###  Algoritmo A: Confirmado $O(n)$
 * **Observación:** Al duplicar la entrada, el tiempo se multiplica aproximadamente por **2**.
 * **Veredicto:** Los datos empíricos confirman mi análisis teórico. El crecimiento es **Lineal**. Las pequeñas variaciones son ruido normal del sistema.
 
-### ✅ Algoritmo B: Confirmado $O(n^2)$
+###  Algoritmo B: Confirmado $O(n^2)$
 * **Observación:** Al duplicar la entrada, el tiempo se multiplica aproximadamente por **4**.
 * **Veredicto:** Confirmado. Es un comportamiento **Cuadrático** clásico. El aumento de tiempo es drástico, coincidiendo perfectamente con la teoría ($2^2 = 4$).
 
-### ✅ Algoritmo C: Confirmado $O(n \log n)$
+###  Algoritmo C: Confirmado $O(n \log n)$
 * **Observación:** Al duplicar la entrada, el tiempo se multiplica por **un poco más de 2** (aprox 2.1 - 2.2).
 * **Veredicto:** Confirmado. Crece más rápido que una línea recta ($2x$), pero mucho más lento que una cuadrática ($4x$).
 
