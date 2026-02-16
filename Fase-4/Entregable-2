@@ -1,0 +1,44 @@
+# 🧪 Entregable: Validación Empírica de Complejidad
+
+## 1. Tabla de Cálculo de Razones (Ratio Test)
+
+Para verificar mis hipótesis teóricas, calculé la razón de crecimiento dividiendo el tiempo de ejecución actual entre el anterior cuando el tamaño de la entrada ($n$) se duplica.
+
+> **Fórmula:** $Ratio = \frac{Tiempo(2n)}{Tiempo(n)}$
+
+| Salto de $n$ (Duplicación) | Algoritmo A<br>*(Pred: $O(n)$)* | Algoritmo B<br>*(Pred: $O(n^2)$)* | Algoritmo C<br>*(Pred: $O(n \log n)$)* |
+| :--- | :---: | :---: | :---: |
+| **1,000 $\to$ 2,000** | $2.55 / 1.28 =$ **1.99** | $19.50 / 4.80 =$ **4.06** | $0.78 / 0.35 =$ **2.22** |
+| **5,000 $\to$ 10,000** | $12.95 / 6.45 =$ **2.01** | $495.20 / 123.0 =$ **4.02** | $4.50 / 2.10 =$ **2.14** |
+| **Patrón Observado** | **$\approx 2x$**<br>(Lineal) | **$\approx 4x$**<br>(Cuadrático) | **$\approx 2.1x$**<br>(Cuasilineal) |
+
+---
+
+## 2. Conclusiones por Algoritmo
+
+### ✅ Algoritmo A: Confirmado $O(n)$
+* **Observación:** Al duplicar la entrada, el tiempo se multiplica aproximadamente por **2**.
+* **Veredicto:** Los datos empíricos confirman mi análisis teórico. El crecimiento es **Lineal**. Las pequeñas variaciones son ruido normal del sistema.
+
+### ✅ Algoritmo B: Confirmado $O(n^2)$
+* **Observación:** Al duplicar la entrada, el tiempo se multiplica aproximadamente por **4**.
+* **Veredicto:** Confirmado. Es un comportamiento **Cuadrático** clásico. El aumento de tiempo es drástico, coincidiendo perfectamente con la teoría ($2^2 = 4$).
+
+### ✅ Algoritmo C: Confirmado $O(n \log n)$
+* **Observación:** Al duplicar la entrada, el tiempo se multiplica por **un poco más de 2** (aprox 2.1 - 2.2).
+* **Veredicto:** Confirmado. Crece más rápido que una línea recta ($2x$), pero mucho más lento que una cuadrática ($4x$).
+
+---
+
+## 3. Explicación del Patrón Cuadrático
+
+> "Si un algoritmo es $O(n^2)$, al duplicar $n$, el tiempo debería multiplicarse por **4**."
+
+**Demostración Matemática:**
+Si asumimos que el tiempo $T(n) \approx c \cdot n^2$, entonces al duplicar la entrada ($2n$):
+
+$$
+T(2n) \approx c \cdot (2n)^2 = c \cdot 4n^2 = 4 \cdot (c \cdot n^2) = 4 \cdot T(n)
+$$
+
+Esto demuestra que los algoritmos cuadráticos se degradan cuatro veces más rápido cada vez que duplicamos la carga de trabajo.
