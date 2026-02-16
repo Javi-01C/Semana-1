@@ -1,6 +1,6 @@
-# 🧪 Entregable: Validación Empírica de Complejidad
 
-## 1. Tabla de Cálculo de Razones (Ratio Test)
+
+## 1. Tabla de Cálculo de Razones
 
 Para verificar mis hipótesis teóricas, calculé la razón de crecimiento dividiendo el tiempo de ejecución actual entre el anterior cuando el tamaño de la entrada ($n$) se duplica.
 
