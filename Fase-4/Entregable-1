@@ -1,0 +1,42 @@
+**Registro de los 4 casos con: tu identificación de errores, la corrección que propondrías, y verificación de si encontraste todos.**
+
+      a) Código: Un bucle for con una condición if x not in lista adentro.
+          Análisis de la IA: Afirmaba que era O(n) porque solo había un bucle visible.
+          Mi argumento: La operación not in es una búsqueda lineal oculta. Por lo tanto, es un bucle dentro de otro bucle.
+          Corrección: Es O(n^2), no O(n).
+          Veredicto:  Encontré el error principal.
+
+      b) Código: for i in range(n): print(i)
+                 for j in range(n): print(j)
+         Análisis de la IA: Decía que la complejidad era O(n^2) porque "hay dos bucles que dependen de n".
+         Mi argumento: Los bucles no están anidados, están uno después del otro. Se suman, no se multiplican.
+         Corrección: Es O(n) + O(n) = O(2n), que se simplifica a O(n).
+         Veredicto: Encontré el error, aunque al principio dudé si 2n era válido como respuesta final luego recordé que las constantes se borran.
+
+      c) Código: i = n
+                  while i > 1:
+                  i = i / 2
+                  print(i)
+         Análisis de la IA: Decía que era O(n) porque "recorre los números hasta llegar a 1"
+         Mi argumento: La variable no disminuye de 1 en 1, se divide. Eso reduce los pasos drásticamente.
+         Corrección: Es O(\log n).Veredicto: Identificado correctamente.
+
+
+      d) Código: Buscar un número en un arreglo desordenado y hacer return apenas lo encuentre.
+         Análisis de la IA: Afirmaba que la complejidad es O(1) porque "si el elemento está al principio, el algoritmo termina de inmediato".
+         Mi argumento: Le dije a la IA que eso era trampa porque Big O mide el "Peor Caso", y el peor caso es que el elemento esté al final (O(n)).
+         La IA también mencionó sutilmente en su análisis que "el espacio de memoria es O(n) porque copiamos la lista", pero el código no copiaba nada. 
+         Me enfoqué tanto en el tiempo que ignoré el error de complejidad espacial.
+         Veredicto:Encontré el error de tiempo, pero fallé en el de memoria.
+
+
+
+   **Porcentaje de errores detectados (meta: >75%).**
+  -Segun la IA mis errores no superaron el 20%, eso quiere decir que obtuve un 80% de deteccion de errores.
+
+
+
+   **Categorización: ¿Qué tipo de errores fueron más difíciles de detectar?**
+      -Los errores de Concepto sel Caso 4. Fue difícil porque la afirmación de la IA ("si está al principio es rápido") es técnicamente cierta en la vida real,
+        pero falsa en la teoría de Big O. Tuve que pelear contra mi intuición de "sentido común" para aplicar la regla del "Peor Escenario".
+
