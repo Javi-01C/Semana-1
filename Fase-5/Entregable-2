@@ -1,0 +1,46 @@
+               **DIAGRAMA**
+
+graph TD
+    %% Nodo Central
+    CORE[("⚡ COMPLEJIDAD ALGORÍTMICA ⚡<br>(Eficiencia y Recursos)")]
+
+    %% Ramas Principales
+    BIO[("🧬 BIOLOGÍA<br>(Supervivencia)")]
+    FIS[("⚛️ FÍSICA<br>(Límites Reales)")]
+    ECO[("💰 ECONOMÍA<br>(Escalabilidad)")]
+
+    %% Conexiones Biología
+    CORE -->|Evita Fuerza Bruta| BIO
+    BIO -->|Paradoja de Levinthal| PLEG[Plegamiento de Proteínas]
+    BIO -->|Heurística| EVOL[Evolución = Optimización]
+
+    %% Conexiones Física
+    CORE -->|Costo de Información| FIS
+    FIS -->|Límite de Landauer| ENT[Borrar bits = Calor]
+    FIS -->|Termodinámica| MAX[Máxima Eficiencia Posible]
+
+    %% Conexiones Economía
+    CORE -->|Costo Marginal| ECO
+    ECO -->|Ley de Rendimientos| DEC[Rendimientos Decrecientes]
+    ECO -->|Automatización| ESC[Modelos de Negocio O(1)]
+
+
+
+
+            ** LA CONEXION MAS IMPACTANTE**
+
+Lo que más me impactó fue descubrir que la ineficiencia del código no es solo una pérdida de tiempo, sino una pérdida física de energía. 
+Siempre vi el software como algo "virtual", separado del mundo físico.
+Sin embargo, el Principio de Landauer demuestra que hay un costo energético mínimo e inevitable para procesar información: 
+cada vez que un algoritmo borra un bit o sobrescribe memoria, lo que es comun en algoritmos ineficientes con mucho uso de RAM,
+se genera calor y aumenta la entropía del universo.Esto cambia mi perspectiva profesional,
+escribir un algoritmo O(n^2) cuando podría ser O(n \log n) no solo hace esperar al usuario;
+literalmente desperdicia electricidad y contribuye al calentamiento global. 
+La optimización de código deja de ser un capricho matemático y se convierte en una responsabilidad de ingeniería con el mundo físico.
+La eficiencia computacional es, en el fondo, eficiencia energética.
+
+
+
+                **PREGUNTA DE INVESTIGACION**
+
+-Sabiendo que el procesamiento de datos consume electricidad y genera calor, ¿podría la optimización de código convertirse en una estrategia real para reducir la huella de carbono global, y deberíamos empezar a medir la "eficiencia energética" del software igual que medimos su velocidad?"
