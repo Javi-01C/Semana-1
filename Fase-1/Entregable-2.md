@@ -19,7 +19,7 @@ Para validar el diagnóstico, comparamos el crecimiento de los datos (n) contra 
 * Impacto del Hardware: Triplicar el servidor solo reduce la constante de tiempo, pero no cambia la curva. Matemáticamente, procesar 500,000^2 operaciones sigue siendo una carga masiva aunque el procesador sea 3 veces más rápido.
 
 3. Recomendación Concreta
- Migrar a una complejidad O(n \log n) o idealmente O(n).
+ Migrar a una complejidad O(n log n) o idealmente O(n).
 
 -¿Por qué?
 Con un algoritmo lineal (O(n)), procesar las 500,000 transacciones actuales tomaría apenas 50 segundos con el hardware original. 
